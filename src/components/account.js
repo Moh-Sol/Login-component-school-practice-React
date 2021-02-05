@@ -49,24 +49,17 @@ function Account() {
         <div className='account-container'>
             <h3> {pageTitle}</h3>
             <form className='sign-in-form' onSubmit={handleSubmit} >
-                <div className='form-container'>
-                    <div>
                         <label>NAME</label>
                         <input type="text" className={inputClass}  id='name' required />
-                    </div>
-                    <div>
+                
                         <label >EMAIL</label>
                         <input   type="text" className={inputClass} id='email' required />
-                    </div>
-                    <div>
+                  
                         <label >PASSWORD</label>
                         <input type="password" className={inputClass} id='password' required />
-                    </div>
-                    <div className='input-submit'>
+             
                         <input type='submit' onSubmit={handleSubmit} value={buttonText} />
-                    </div>
-
-                </div>
+            
 
             </form>
 

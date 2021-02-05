@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      <h2>Välkommen!</h2>
+      <h2 className='welcome'>Välkommen!</h2>
 
       <Switch>
         <Route path="/registration" component={Account} />

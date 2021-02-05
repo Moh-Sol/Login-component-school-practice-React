@@ -4,59 +4,110 @@
   margin: 0;
 }
 
+body {
+  background: #582424;
+/* background-color:#E5E5E5 ; */
+}
+
 .App {
   width: 375px;
   height: 798px;
-  background-color:black;
   margin: 0 auto;
+  display: block;
 }
 
-.App h2 , h3 {
+.welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95px;
+  width: 375px;
+  color: black;
+  background: #EDEDED;
+  font-family: Titillium Web;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: 0em;
   text-align: center;
-  color: white;
+}
+
+.account-container {
+  background-color: rgb(255, 255, 255);
+  height: 703px;
 }
 
 .account-container h3 {
-margin: 20px;
-
-
+  height: 79px;
+  left: 27px;
+  top: 129px;
+  font-family: Titillium Web;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 80%;
+  color: #000000;
+  padding-top: 60px;
+  text-align: center;
 }
+
 .sign-in-form {
-  width: 275px;
-  height: 598px;
-  background-color:rgb(255, 255, 255);
-  margin: 100px auto;
+
+  margin-top: 50px;
 }
 
-.form-container{
-  width: 275px;
-  height: 100%;
-  /* background-color: cadetblue; */
+.sign-in-form label {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 80%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  /* align-items: center; */
+  /* align-items: flex-end; */
+  width: 343px;
+  height: 20px;
+  /* margin-bottom: 5px; */
+  margin: 0 auto;
+  color: #000000 60%;
 }
 
-.form-container div {
-
-display: flex;
-flex-direction: column;
-margin: 10px;
-
+.sign-in-form input {
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 30px;
+  width: 343px;
+  height: 46px;
+ 
 }
 
-
-#email {
-
-  /* border: none ; */
-
-  /* border: 2px solid black ; */
+.sign-in-form input:last-child {
+  width: 343px;
+  height: 72px;
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+  border-radius: 3px;
+  background-color: white;
+  margin-top: 70px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 190%;
+  color: #000000;
+  display: block;
+  text-align: center;
 }
 
-.input-custom{
+.input-normal {
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+  border-radius: 3px;
+}
 
-border: 0;
-pointer-events: none;
+.input-custom {
+  border: 0;
+  pointer-events: none;
+  font-weight: bold;
 
 }
