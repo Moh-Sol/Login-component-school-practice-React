@@ -1,14 +1,16 @@
 let initialState = {
     name:'',
     email:'',
-    pass:''
+    password:''
 }
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case '':
+        case 'setUserData':
             return {
-              
+                name:action.name,
+                email:action.email,
+                password:action.password
             }
         default:
             return state;
