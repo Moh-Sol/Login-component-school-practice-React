@@ -10,6 +10,7 @@ function Account() {
 
     const [buttonText, setButtonText] = useState('Sign me up!')
     const [pageTitle, setPageTitle] = useState('Registrera dig för ett konto')
+    const [inputClass, setInputClass] = useState('input-normal')
 
 
     const history = useHistory();
@@ -17,41 +18,27 @@ function Account() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        let name = e.target[0];
-        let email = e.target[1];
-        let password = e.target[2];
+        let name = e.target[0].value;
+        let email = e.target[1].value;
+        let password = e.target[2].value;
+        console.log(e)
+
         if (buttonText === 'Sign me up!') {
-            console.log(e)
-            name.style.pointerEvents = 'none'
-            email.style.pointerEvents = 'none'
-            password.style.pointerEvents = 'none'
-            name.style.border = '0'
-            email.style.border = '0'
-            password.style.border = '0'
-            dispatch(setUserData(name.value, email.value, password.value))
+            setInputClass('input-custom')
+            dispatch(setUserData(name, email, password))
             setButtonText('Ändra')
             setPageTitle('Ditt konto')
             history.push('/account')
 
         }
         if (buttonText === 'Ändra') {
-            name.style.pointerEvents = 'auto'
-            email.style.pointerEvents = 'auto'
-            password.style.pointerEvents = 'auto'
-            name.style.border = '2px solid black'
-            email.style.border = '2px solid black'
-            password.style.border = '2px solid black'
+            setInputClass('input-normal')
             setButtonText('Spara')
         }
 
         if (buttonText === 'Spara') {
-            name.style.pointerEvents = 'none'
-            email.style.pointerEvents = 'none'
-            password.style.pointerEvents = 'none'
-            name.style.border = '0'
-            email.style.border = '0'
-            password.style.border = '0'
-            dispatch(setUserData(name.value, email.value, password.value))
+            setInputClass('input-custom')
+            dispatch(setUserData(name, email, password))
             setButtonText('Ändra')
         }
     }
@@ -65,15 +52,15 @@ function Account() {
                 <div className='form-container'>
                     <div>
                         <label>NAME</label>
-                        <input type="text" id='name' required />
+                        <input type="text" className={inputClass}  id='name' required />
                     </div>
                     <div>
                         <label >EMAIL</label>
-                        <input type="email" id='email' required />
+                        <input   type="text" className={inputClass} id='email' required />
                     </div>
                     <div>
                         <label >PASSWORD</label>
-                        <input type="password" id='password' required />
+                        <input type="password" className={inputClass} id='password' required />
                     </div>
                     <div className='input-submit'>
                         <input type='submit' onSubmit={handleSubmit} value={buttonText} />
