@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import setUserData from '../actions/setUserData';
@@ -18,20 +18,12 @@ function Account() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        // if (e.target[0].value.trim() && e.target[1].value.trim() && e.target[2].value.trim()) {
-        //     if (name.indexOf(' ') == -1) {
-        //         console.log('there is no  white space')
-        //     } else   console.log('you can not have a white space')
-
-
-
-
-
         let name = e.target[0].value;
         let email = e.target[1].value;
         let password = e.target[2].value;
-        // console.log(e)
-        if (name.trim() && name.indexOf(' ') == -1 && email.trim() && email.indexOf(' ') == -1 && password.trim() && password.indexOf(' ') == -1) {
+    
+  
+        if (name.indexOf(' ') == -1 && email.indexOf(' ') == -1 && password.indexOf(' ') == -1) {
 
             if (buttonText === 'Sign me up!') {
                 setInputClass('input-custom')
@@ -65,7 +57,7 @@ function Account() {
                 <input type="text" className={inputClass} id='name' required />
 
                 <label >EMAIL</label>
-                <input type="text" className={inputClass} id='email' required />
+                <input type="email" className={inputClass}  id='email' required />
 
                 <label >PASSWORD</label>
                 <input type="password" className={inputClass} id='password' required />
